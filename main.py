@@ -190,6 +190,12 @@ async def faktor(ctx, b: int):
     hasil = math.factorial(b)
     await ctx.send(f"Faktorial {b} adalah {hasil}")
 
+@bot.command()
+async def daur_ulang(ctx):
+    with open('daftar_daurulang.txt', 'r', encoding='utf-8') as b:
+        document = b.read()
+        await ctx.send(document)
+
 bot.run('token')
 
 
